@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Control de Vuelos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<header class="topbar">
+  <div class="topbar-inner">
+    <h1>Control de Vuelos</h1>
+    <p>Registro, consulta, actualización de estado y reportes diarios</p>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab-btn active" data-tab="registro">Registro</button>
+  <button class="tab-btn" data-tab="consulta">Consulta</button>
+  <button class="tab-btn" data-tab="actualizacion">Actualización</button>
+  <button class="tab-btn" data-tab="reportes">Reportes</button>
+</nav>
+
+<main class="container">
+
+  <section id="registro" class="panel active">
+    <h2>Registrar vuelo</h2>
+    <form id="formRegistro">
+      <div class="grid">
+        <label>Número de vuelo
+          <input type="text" id="numero" placeholder="LA2045" required>
+        </label>
+        <label>Aerolínea
+          <input type="text" id="aerolinea" placeholder="LATAM" required>
+        </label>
+        <label>Origen
+          <input type="text" id="origen" placeholder="Lima (LIM)" required>
+        </label>
+        <label>Destino
+          <input type="text" id="destino" placeholder="Cusco (CUZ)" required>
+        </label>
+        <label>Hora de salida
+          <input type="time" id="horaSalida" required>
+        </label>
+        <label>Hora de llegada
+          <input type="time" id="horaLlegada" required>
+        </label>
+        <label>Puerta de embarque
+          <input type="text" id="puerta" placeholder="12" required>
+        </label>
+      </div>
+      <p id="errorRegistro" class="error"></p>
+      <button type="submit" class="btn-primary">Registrar vuelo</button>
+    </form>
+
+    <h3>Vuelos registrados</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Vuelo</th><th>Aerolínea</th><th>Ruta</th><th>Salida</th><th>Llegada</th><th>Puerta</th><th>Estado</th>
+          </tr>
+        </thead>
+        <tbody id="tablaRegistro"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="consulta" class="panel">
+    <h2>Consultar vuelos</h2>
+    <div class="filtros">
+      <input type="text" id="buscarTexto" placeholder="Buscar por número, aerolínea o ruta">
+      <select id="filtroEstado">
+        <option value="">Todos los estados</option>
+        <option value="Programado">Programado</option>
+        <option value="En vuelo">En vuelo</option>
+        <option value="Retrasado">Retrasado</option>
+        <option value="Aterrizado">Aterrizado</option>
+        <option value="Cancelado">Cancelado</option>
+      </select>
+      <button class="btn-secondary" id="btnBuscar">Buscar</button>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Vuelo</th><th>Aerolínea</th><th>Ruta</th><th>Salida</th><th>Llegada</th><th>Puerta</th><th>Estado</th>
+          </tr>
+        </thead>
+        <tbody id="tablaConsulta"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="actualizacion" class="panel">
+    <h2>Actualizar estado de vuelo</h2>
+    <form id="formActualizacion">
+      <div class="grid">
+        <label>Vuelo
+          <select id="selectVuelo"></select>
+        </label>
+        <label>Nuevo estado
+          <select id="nuevoEstado">
+            <option value="Programado">Programado</option>
+            <option value="En vuelo">En vuelo</option>
+            <option value="Retrasado">Retrasado</option>
+            <option value="Aterrizado">Aterrizado</option>
+            <option value="Cancelado">Cancelado</option>
+          </select>
+        </label>
+      </div>
+      <label>Motivo (opcional)
+        <textarea id="motivo" rows="2" placeholder="Ej: condiciones climáticas en destino"></textarea>
+      </label>
+      <button type="submit" class="btn-primary">Actualizar estado</button>
+    </form>
+    <p id="confirmacionActualizacion" class="confirmacion"></p>
+  </section>
+
+  <section id="reportes" class="panel">
+    <h2>Reporte diario</h2>
+    <button class="btn-secondary" id="btnGenerarReporte">Generar reporte</button>
+    <div class="stats" id="statsReporte"></div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
