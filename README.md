@@ -5,7 +5,7 @@ aplicando control de versiones colaborativo con GitHub.
 
 ## Integrantes
 - Carlos Barrientos Ccocha 
--
+- Brandon Huarachi Flores
 -
 
 ## Descripción
