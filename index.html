@@ -1,133 +1,179 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Control de Vuelos</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PasosPeru - viajes, cultura y aventura en Cusco y Machu Picchu.">
+  <title>PasosPeru | Cusco & Machu Picchu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
-<header class="topbar">
-  <div class="topbar-inner">
-    <h1>Control de Vuelos</h1>
-    <p>Registro, consulta, actualización de estado y reportes diarios</p>
+<header class="hero" id="inicio">
+  <nav class="nav container">
+    <a href="#inicio" class="brand">
+      <span class="brand-p">P</span>
+      <span class="brand-text">PasosPeru<small>VIAJA. DESCUBRE. VIVE.</small></span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="menu" id="menu">
+      <li><a href="#inicio">INICIO</a></li>
+      <li><a href="#destinos">DESTINOS</a></li>
+      <li><a href="#actividades">ACTIVIDADES</a></li>
+      <li><a href="#paquetes">PAQUETES</a></li>
+      <li><a href="#nosotros">NOSOTROS</a></li>
+      <li><a href="#contacto">CONTACTO</a></li>
+    </ul>
+
+    <a class="phone" href="tel:+51942011056">☎ &nbsp;942 011 056</a>
+  </nav>
+
+  <div class="hero-content container">
+    <p class="eyebrow">EXPERIENCIAS AUTÉNTICAS EN LOS ANDES</p>
+    <h1>CUSCO<br><span>MACHU PICCHU</span></h1>
+    <h2>VIVE LA MAGIA DE LOS ANDES</h2>
+    <p class="hero-copy">Descubre historia, cultura, naturaleza y gastronomía en uno de los destinos más increíbles del Perú.</p>
+    <a href="#paquetes" class="btn">EXPLORAR AHORA <b>→</b></a>
   </div>
 </header>
 
-<nav class="tabs">
-  <button class="tab-btn active" data-tab="registro">Registro</button>
-  <button class="tab-btn" data-tab="consulta">Consulta</button>
-  <button class="tab-btn" data-tab="actualizacion">Actualización</button>
-  <button class="tab-btn" data-tab="reportes">Reportes</button>
-</nav>
+<section class="benefits">
+  <div class="container benefit-grid">
+    <div><strong>♢</strong><span><b>VIAJES SEGUROS</b><small>Tu seguridad es nuestra prioridad</small></span></div>
+    <div><strong>♧</strong><span><b>GUÍAS EXPERTOS</b><small>Guías locales profesionales</small></span></div>
+    <div><strong>□</strong><span><b>MEJORES PLANES</b><small>Paquetes para ti y tu familia</small></span></div>
+    <div><strong>⌖</strong><span><b>EXPERIENCIAS ÚNICAS</b><small>Momentos para recordar</small></span></div>
+  </div>
+</section>
 
-<main class="container">
-
-  <section id="registro" class="panel active">
-    <h2>Registrar vuelo</h2>
-    <form id="formRegistro">
-      <div class="grid">
-        <label>Número de vuelo
-          <input type="text" id="numero" placeholder="LA2045" required>
-        </label>
-        <label>Aerolínea
-          <input type="text" id="aerolinea" placeholder="LATAM" required>
-        </label>
-        <label>Origen
-          <input type="text" id="origen" placeholder="Lima (LIM)" required>
-        </label>
-        <label>Destino
-          <input type="text" id="destino" placeholder="Cusco (CUZ)" required>
-        </label>
-        <label>Hora de salida
-          <input type="time" id="horaSalida" required>
-        </label>
-        <label>Hora de llegada
-          <input type="time" id="horaLlegada" required>
-        </label>
-        <label>Puerta de embarque
-          <input type="text" id="puerta" placeholder="12" required>
-        </label>
-      </div>
-      <p id="errorRegistro" class="error"></p>
-      <button type="submit" class="btn-primary">Registrar vuelo</button>
-    </form>
-
-    <h3>Vuelos registrados</h3>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Vuelo</th><th>Aerolínea</th><th>Ruta</th><th>Salida</th><th>Llegada</th><th>Puerta</th><th>Estado</th>
-          </tr>
-        </thead>
-        <tbody id="tablaRegistro"></tbody>
-      </table>
+<section class="section" id="destinos">
+  <div class="container">
+    <div class="heading center">
+      <p>DESCUBRE CUSCO</p>
+      <h2>Un destino, miles de historias.</h2>
+      <span>Conoce Machu Picchu y los lugares que hacen de Cusco una experiencia inolvidable.</span>
     </div>
-  </section>
 
-  <section id="consulta" class="panel">
-    <h2>Consultar vuelos</h2>
-    <div class="filtros">
-      <input type="text" id="buscarTexto" placeholder="Buscar por número, aerolínea o ruta">
-      <select id="filtroEstado">
-        <option value="">Todos los estados</option>
-        <option value="Programado">Programado</option>
-        <option value="En vuelo">En vuelo</option>
-        <option value="Retrasado">Retrasado</option>
-        <option value="Aterrizado">Aterrizado</option>
-        <option value="Cancelado">Cancelado</option>
-      </select>
-      <button class="btn-secondary" id="btnBuscar">Buscar</button>
+    <div class="destinations">
+      <article class="destination main-destination">
+        <img src="img/machu-picchu.jpg" alt="Machu Picchu">
+        <div><small>DESTINO PRINCIPAL</small><h3>Machu Picchu</h3><p>Historia, montañas y una de las maravillas del mundo.</p></div>
+      </article>
+      <article class="destination mini">
+        <div class="mini-icon">✦</div>
+        <div><small>CUSCO</small><h3>Valle Sagrado</h3><p>Paisajes andinos y cultura viva.</p></div>
+      </article>
+      <article class="destination mini">
+        <div class="mini-icon">✧</div>
+        <div><small>NATURALEZA</small><h3>Montaña de 7 Colores</h3><p>Una aventura entre los Andes.</p></div>
+      </article>
     </div>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Vuelo</th><th>Aerolínea</th><th>Ruta</th><th>Salida</th><th>Llegada</th><th>Puerta</th><th>Estado</th>
-          </tr>
-        </thead>
-        <tbody id="tablaConsulta"></tbody>
-      </table>
+  </div>
+</section>
+
+<section class="section activities" id="actividades">
+  <div class="container">
+    <div class="heading center">
+      <p>VIVE CUSCO</p>
+      <h2>Actividades para todos.</h2>
     </div>
-  </section>
 
-  <section id="actualizacion" class="panel">
-    <h2>Actualizar estado de vuelo</h2>
-    <form id="formActualizacion">
-      <div class="grid">
-        <label>Vuelo
-          <select id="selectVuelo"></select>
-        </label>
-        <label>Nuevo estado
-          <select id="nuevoEstado">
-            <option value="Programado">Programado</option>
-            <option value="En vuelo">En vuelo</option>
-            <option value="Retrasado">Retrasado</option>
-            <option value="Aterrizado">Aterrizado</option>
-            <option value="Cancelado">Cancelado</option>
-          </select>
-        </label>
-      </div>
-      <label>Motivo (opcional)
-        <textarea id="motivo" rows="2" placeholder="Ej: condiciones climáticas en destino"></textarea>
-      </label>
-      <button type="submit" class="btn-primary">Actualizar estado</button>
-    </form>
-    <p id="confirmacionActualizacion" class="confirmacion"></p>
-  </section>
+    <div class="activity-grid">
+      <article class="activity"><img src="img/senderismo.jpg" alt="Senderismo en Cusco"><div class="activity-body"><i>♟</i><h3>SENDERISMO</h3><p>Explora rutas increíbles como Camino Inca, Salkantay y más.</p></div></article>
+      <article class="activity"><img src="img/fiestas.jpg" alt="Fiestas tradicionales en Cusco"><div class="activity-body"><i>♜</i><h3>FIESTAS PATRONALES</h3><p>Vive la tradición y devoción de nuestro pueblo en cada celebración.</p></div></article>
+      <article class="activity"><img src="img/fiestas.jpg" alt="Carnavales de Cusco"><div class="activity-body"><i>♣</i><h3>CARNAVALES</h3><p>Disfruta de la alegría, música, colores y costumbres.</p></div></article>
+      <article class="activity"><img src="img/comida.jpg" alt="Comidas típicas del Cusco"><div class="activity-body"><i>♨</i><h3>COMIDAS TÍPICAS</h3><p>Saborea lo mejor de la gastronomía cusqueña y peruana.</p></div></article>
+    </div>
+  </div>
+</section>
 
-  <section id="reportes" class="panel">
-    <h2>Reporte diario</h2>
-    <button class="btn-secondary" id="btnGenerarReporte">Generar reporte</button>
-    <div class="stats" id="statsReporte"></div>
-  </section>
+<section class="packages" id="paquetes">
+  <div class="container">
+    <div class="heading center light">
+      <p>PAQUETES DESTACADOS</p>
+      <h2>Viaja con tu familia.</h2>
+    </div>
 
-</main>
+    <div class="package-grid">
+      <article class="package">
+        <div class="package-top"><span>PLAN FAMILIAR</span></div>
+        <div class="package-body">
+          <h3>BÁSICO</h3>
+          <p>☼ &nbsp;3 NOCHES Y 2 DÍAS</p>
+          <p>♧ &nbsp;2 ADULTOS Y 2 NIÑOS</p>
+          <hr>
+          <div class="price">1144 <small>SOLES</small></div>
+          <div class="included">✓ Incluye alojamientos y guías</div>
+        </div>
+      </article>
 
-<script src="script.js"></script>
+      <article class="package featured">
+        <div class="package-top"><span>PLAN FAMILIAR</span></div>
+        <div class="package-body">
+          <h3>PRO</h3>
+          <p>☼ &nbsp;4 NOCHES Y 5 DÍAS</p>
+          <p>♧ &nbsp;4 ADULTOS Y 2 NIÑOS</p>
+          <hr>
+          <div class="price">2450 <small>SOLES</small></div>
+          <div class="included">✓ Incluye alojamientos y guías</div>
+        </div>
+      </article>
+
+      <article class="package">
+        <div class="package-top"><span>PLAN FAMILIAR</span></div>
+        <div class="package-body">
+          <h3>PREMIUM</h3>
+          <p>☼ &nbsp;5 DÍAS Y 6 NOCHES</p>
+          <p>♧ &nbsp;5 ADULTOS Y 4 NIÑOS</p>
+          <hr>
+          <div class="price">7560 <small>SOLES</small></div>
+          <div class="included">✓ Incluye alojamientos y guías</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="about section" id="nosotros">
+  <div class="container about-grid">
+    <div class="about-image"><img src="img/machu-picchu.jpg" alt="Paisaje de Machu Picchu"></div>
+    <div>
+      <p class="heading-kicker">PASOSPERU</p>
+      <h2>Tu aventura comienza con un paso.</h2>
+      <p>Somos una empresa de viajes enfocada en crear experiencias auténticas en Cusco y Machu Picchu. Queremos que conozcas el Perú de una manera cercana, segura y memorable.</p>
+      <div class="checks"><span>✓ Atención personalizada</span><span>✓ Alojamientos incluidos</span><span>✓ Guías incluidos</span><span>✓ Experiencias familiares</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="container contact-inner">
+    <div><p>¿LISTO PARA TU AVENTURA?</p><h2>Da el primer paso hacia Cusco.</h2><span>Escríbenos y te ayudaremos a elegir el plan ideal.</span></div>
+    <a class="btn" href="https://wa.me/51942011056" target="_blank" rel="noopener">WHATSAPP &nbsp; 942 011 056 →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <a href="#inicio" class="brand footer-brand"><span class="brand-p">P</span><span class="brand-text">PasosPeru<small>VIAJA. DESCUBRE. VIVE.</small></span></a>
+      <p>Viajes y experiencias auténticas en Cusco, Machu Picchu y todo el Perú.</p>
+    </div>
+    <div><h4>ENLACES RÁPIDOS</h4><a href="#inicio">Inicio</a><a href="#destinos">Destinos</a><a href="#actividades">Actividades</a><a href="#paquetes">Paquetes</a></div>
+    <div><h4>DESTINOS</h4><span>Machu Picchu</span><span>Valle Sagrado</span><span>Montaña de 7 Colores</span><span>Ciudad de Cusco</span></div>
+    <div><h4>CONTACTO</h4><a href="tel:+51942011056">☎ 942 011 056</a><span>📍 Cusco, Perú</span><a href="https://wa.me/51942011056">WhatsApp</a></div>
+  </div>
+  <div class="copyright">© <span id="year"></span> PasosPeru. Todos los derechos reservados.</div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
+
