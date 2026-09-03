@@ -6,7 +6,7 @@ aplicando control de versiones colaborativo con GitHub.
 ## Integrantes
 - Carlos Barrientos Ccocha 
 - Brandon Huarachi Flores
--
+- Mattius De la Cruz
 
 ## Descripción
 El sistema permite registrar vuelos, consultar su estado en tiempo real,
