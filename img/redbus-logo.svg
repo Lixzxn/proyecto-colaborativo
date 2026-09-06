@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150" role="img" aria-label="redBus">
+  <rect width="520" height="150" rx="28" fill="#fff"/>
+  <g transform="translate(28 31)">
+    <rect x="0" y="12" width="116" height="72" rx="15" fill="#e5392f"/>
+    <rect x="13" y="25" width="90" height="31" rx="7" fill="#fff"/>
+    <rect x="21" y="31" width="35" height="19" rx="3" fill="#e5392f"/>
+    <rect x="61" y="31" width="35" height="19" rx="3" fill="#e5392f"/>
+    <circle cx="25" cy="91" r="10" fill="#333"/>
+    <circle cx="91" cy="91" r="10" fill="#333"/>
+    <path d="M10 68h96" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <text x="165" y="95" font-family="Arial, Helvetica, sans-serif" font-size="67" font-weight="800" fill="#e5392f">redBus</text>
+</svg>
