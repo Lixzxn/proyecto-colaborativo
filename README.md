@@ -13,3 +13,6 @@ El sistema permite registrar vuelos, consultar su estado en tiempo real,
 actualizar informacion de itinerarios y generar reportes de pasajeros
 por ruta. Cada modulo fue desarrollado por un integrante del equipo en
 una rama independiente.
+
+
+Vez que si me deja editar, antes no me dejaba.
